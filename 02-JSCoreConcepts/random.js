@@ -9,3 +9,5 @@ const fillArray = () => {
 const displayArray = () => {
   console.log(fillArray());
 };
+
+displayArray();
