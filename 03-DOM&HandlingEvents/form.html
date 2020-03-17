@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Fill in a form</title>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-	<title>Fill in a form</title>
-	<meta charset="UTF-8">
-</head>
+  <body>
+    <h1>Filling in a form</h1>
+    <form>
+      <p>University:<br /><input type="text" /></p>
+      <p>Address:<br /><input type="text" /></p>
+      <button type="button">Hint</button>
+    </form>
 
-<body>
-	<h1>Filling in a form</h1>
-	<form>
-		<p>University:<br><input type="text"></p>
-		<p>Address:<br><input type="text"></p>
-		<button type="button">Hint</button>
-	</form>
+    <script>
+      // a JavaScript code here ...
+      var university = "Cracow University of Economics";
+      var address = "Rakowicka 27, Krakow, POLAND";
 
-	<script>
-		// a JavaScript code here ...
-		var university = "Cracow University of Economics";
-		var address = "Rakowicka 27, Krakow, POLAND";
-
-	</script>
-</body>
-
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", function() {
+          document.getElementsByTagName("input")[0].value = university;
+          document.getElementsByTagName("input")[1].value = address;
+        });
+    </script>
+  </body>
 </html>
