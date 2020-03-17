@@ -3,6 +3,7 @@
   <head>
     <title>Shopping List</title>
     <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 
   <body>
@@ -19,14 +20,14 @@
     </ol>
 
     <script>
-      document
-        .getElementsByTagName("button")[0]
-        .addEventListener("click", function() {
-          let li = document.createElement("li");
-          let text = document.getElementsByTagName("input")[0].value;
-          li.innerHTML = text;
-          document.getElementsByTagName("ol")[0].appendChild(li);
-        });
+      $("ol").on("dblclick", "li", function() {
+        $(this).remove();
+      });
+
+      $("button").click(function() {
+        let li = $("<li></li>").text($("input").val());
+        $("ol").append(li);
+      });
     </script>
   </body>
 </html>
