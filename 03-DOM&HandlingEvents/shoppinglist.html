@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Shopping List</title>
-    <meta charset="UTF-8">
-</head>
+    <meta charset="UTF-8" />
+  </head>
 
-<body>
+  <body>
     <h1>Shopping List</h1>
     <p>
-        New item: <input type="text" name="item">
-        <button type="button">Add</button>
+      New item: <input type="text" name="item" />
+      <button type="button">Add</button>
     </p>
     <h3>List of items</h3>
     <ol>
-        <li>cooking oil</li>
-        <li>breakfast cereal</li>
-        <li>bread</li>
+      <li>cooking oil</li>
+      <li>breakfast cereal</li>
+      <li>bread</li>
     </ol>
 
     <script>
-    	// a JavaScript code here ...
-
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", function() {
+          let li = document.createElement("li");
+          let text = document.getElementsByTagName("input")[0].value;
+          li.innerHTML = text;
+          document.getElementsByTagName("ol")[0].appendChild(li);
+        });
     </script>
-</body>
-
+  </body>
 </html>
